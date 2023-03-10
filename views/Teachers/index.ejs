@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ครู</title>
+
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel='stylesheet' href='/stylesheets/nav_bar.css'>
+
+</head>
+
+<body>
+
+    <header class="header">
+        <a class="logo" href="/">Just ตาราง</a>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="/">หน้าหลัก</a></li>
+                <li><a href="/Classrooms">ห้องเรียน</a></li>
+                <li><a href="/Subjects">วิชา</a></li>
+                <li><a style="color: #0088a9;" href="/Teachers">ครู</a></li>
+                <li><a href="#">กำหนดข้อมูล</a></li>
+                <li><a href="#">จัดตาราง</a></li>
+                <li><a href="#">พิมพ์ตาราง</a></li>
+            </ul>
+        </nav>
+        <a class="cta" href="/About">เกี่ยวกับ</a>
+    </header>
+
+    <main>
+        <div class="container" style="margin-top: 50px;">
+            <% if (messages.error) { %>
+                <div class="alert alert-danger" role="alert">
+                    <%= messages.error %>
+                </div>
+                <% } %>
+
+                    <% if (messages.success) { %>
+                        <div class="alert alert-success" role="alert">
+                            <%= messages.success %>
+                        </div>
+                        <% } %>
+                            <a href="/" class="btn btn-info">กลับ</a>
+                            <br><br>
+
+                            <div class="card">
+
+                                <div class="card-header">
+                                    <ul class="nav nav-pills w-100">
+                                        <h2 class="nav-link">ครู</h2>
+                                        <li class="nav-link ml-auto">
+                                            <a href="/Teachers/add" class="nav-link active">เพิ่มรายชื่อครู</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="card-body">
+                                    <% if(data.length) { %>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">ID</th>
+                                                    <th scope="col">คำนำหน้า</th>
+                                                    <th scope="col">ชื่อจริง</th>
+                                                    <th scope="col">นามสกุล</th>
+                                                    <th width="200px"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% for(let i=0; i < data.length; i++) { %>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <%= data[i].TeacherID %>
+                                                        </th>
+                                                        <td>
+                                                            <%= data[i].TeacherTitle %>
+                                                        </td>
+                                                        <td>
+                                                            <%= data[i].TeacherFirstName %>
+                                                        </td>
+                                                        <td>
+                                                            <%= data[i].TeacherLastName %>
+                                                        </td>
+
+                                                        <td>
+                                                            <a href="../Teachers/edit/<%= data[i].TeacherID %>"
+                                                                class="btn btn-success edit">แก้ไข</a>
+                                                            <a href="../Teachers/delete/<%= data[i].TeacherID %>"
+                                                                class="btn btn-danger delete">ลบ</a>
+                                                        </td>
+                                                    </tr>
+                                                    <% } %>
+                                            </tbody>
+                                        </table>
+                                        <% } %>
+                                            <% if(!data.length) { %>
+                                                <p class="text-center">ไม่พบรายชื่อครู!</p>
+                                                <% } %>
+                                </div>
+
+                            </div>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>

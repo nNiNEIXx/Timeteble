@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>วิชา</title>
+
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel='stylesheet' href='/stylesheets/nav_bar.css' />
+</head>
+
+<body>
+
+    <header>
+        <a class="logo" href="/">Just ตาราง</a>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="/">หน้าหลัก</a></li>
+                <li><a href="/Classrooms">ห้องเรียน</a></li>
+                <li><a style="color: #0088a9" href="/Subjects">วิชา</a></li>
+                <li><a href="/Teachers">ครู</a></li>
+                <li><a href="#">กำหนดข้อมูล</a></li>
+                <li><a href="#">จัดตาราง</a></li>
+                <li><a href="#">พิมพ์ตาราง</a></li>
+            </ul>
+        </nav>
+        <a class="cta" href="/About">เกี่ยวกับ</a>
+    </header>
+
+    <div class="container" style="margin-top: 50px;">
+        <% if (messages.error) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= messages.error %>
+            </div>
+            <% } %>
+                <% if (messages.success) { %>
+                    <div class="alert alert-success" role="alert">
+                        <%= messages.success %>
+                    </div>
+                    <% } %>
+                        <a href="/" class="btn btn-info">กลับ</a>
+                        <br><br>
+                        <div class="card">
+                            <div class="card-header">
+                                <ul class="nav nav-pills w-100">
+                                    <h2 class="nav-link">วิชา</h2>
+                                    <li class="nav-link ml-auto">
+                                        <a href="/Subjects/add" class="nav-link active">เพิ่มรายวิชา</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                <% if(data.length) { %>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">รหัสรายวิชา</th>
+                                                <th scope="col">ชื่อรายวิชา</th>
+                                                <th scope="col">กลุ่มสาระการเรียนรู้</th>
+
+                                                <th width="200px"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% for(let i=0; i < data.length; i++) { %>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <%= data[i].SubjectID %>
+                                                    </th>
+                                                    <td>
+                                                        <%= data[i].SubjectCode %>
+                                                    </td>
+                                                    <td>
+                                                        <%= data[i].SubjectName %>
+                                                    </td>
+                                                    <td>
+                                                        <%= data[i].SubjectDepartment %>
+                                                    </td>
+                                                    <td>
+                                                        <a href="../Subjects/edit/<%= data[i].SubjectID %>"
+                                                            class="btn btn-success edit">แก้ไข</a>
+                                                        <a href="../Subjects/delete/<%= data[i].SubjectID %>"
+                                                            class="btn btn-danger delete">ลบ</a>
+                                                    </td>
+                                                </tr>
+                                                <% } %>
+                                        </tbody>
+                                    </table>
+                                    <% } %>
+                                        <% if(!data.length) { %>
+                                            <p class="text-center">ไม่พบรายวิชา!</p>
+                                            <% } %>
+                            </div>
+                        </div>
+
+    </div>
+
+</body>
+
+</html>
