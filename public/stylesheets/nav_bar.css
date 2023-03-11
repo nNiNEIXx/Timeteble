@@ -1,9 +1,9 @@
 header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding: 30px 10%;
-  background-color: #24252a;
+  background-color:transparent;
 }
 
 .logo {
@@ -20,9 +20,8 @@ header {
 }
 
 .nav__links a,
-.cta {
+.cta {  
   font-family: "Montserrat", sans-serif;
-  font-weight: 500;
   color: #edf0f1;
   text-decoration: none;
 }
@@ -41,7 +40,7 @@ header {
 }
 
 .cta {
-  margin-left: 20px;
+  margin-left: auto;
   padding: 9px 25px;
   background-color: rgba(0, 136, 169, 1);
   border: none;

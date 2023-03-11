@@ -49,13 +49,13 @@
     display: none;
 }
 
-body {
-    background-color: hsl(40, 7%, 8%);
+html {
+    scroll-behavior: smooth;
 }
 
-
-html:focus-within {
-    scroll-behavior: smooth;
+body {
+    
+    background-color: rgba(0, 18, 32, 255)
 }
 
 .container {
@@ -73,6 +73,7 @@ ul {
 }
 
 .alert {
+    animation: transitionIN 0.75s;
     position: relative;
     padding: .75rem 1.25rem;
     margin-bottom: 1rem;
@@ -175,7 +176,6 @@ ul {
     margin-bottom: 0;
     background-color: #343a40;
 }
-
 
 .card-body {
     color: #cccccc;
