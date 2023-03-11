@@ -66,17 +66,12 @@ main:before {
 }
 
 .lf--input {
+    outline: none;
   flex: 1;
   padding: 1em;
   border: 0;
   color: #8f8f8f;
   font-size: 1rem;
-}
-
-.lf--input:focus {
-  outline: none;
-  transition: transform 0.15s ease;
-  transform: scale(1.1);
 }
 
 .lf--submit {
@@ -98,8 +93,10 @@ main:before {
   transform: scale(1.1);
 }
 
-.lf--forgot {
-  margin-top: 1em;
+.lf--forgot,
+.lf--register {
+  padding-top: 2px;
+  margin-top: 1px;
   color: #00d6b7;
   font-size: 0.65em;
   text-align: center;
