@@ -54,8 +54,13 @@ html {
 }
 
 body {
-    animation: transitionIN 0.75s;
     background-color: rgba(0, 18, 32, 255)
+}
+
+main,
+footer,
+.container{
+    animation: transitionIN 0.75s;
 }
 
 .container {
