@@ -54,12 +54,11 @@ html {
 }
 
 body {
-    
+    animation: transitionIN 0.75s;
     background-color: rgba(0, 18, 32, 255)
 }
 
 .container {
-    animation: transitionIN 0.75s;
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     padding-right: 15px;

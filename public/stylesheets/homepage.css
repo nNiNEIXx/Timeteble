@@ -195,7 +195,6 @@ a {
     text-decoration: none;
 }
 
-
 .container {
     background-color: transparent;
     font-size: var(--fs-body);
@@ -209,7 +208,7 @@ a {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
-    gap: var(--size-500);
+    gap: var(--size-1000);
 }
 
 .btn {
@@ -238,4 +237,14 @@ a {
     color: rgb(255, 255, 255);
     background-color: hsl(37, 94%, 31%);
     border-color: hsl(37, 94%, 31%);
+}
+
+.arow-down {
+    padding: 6px;
+    height: 40px;
+    opacity: 0.3;
+    display: block;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
 }
