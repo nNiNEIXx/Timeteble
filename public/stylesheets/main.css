@@ -49,6 +49,7 @@
     display: none;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
@@ -56,11 +57,25 @@ html {
 body {
     background-color: rgba(0, 18, 32, 255)
 }
+header{
+    -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+}
 
 main,
 footer,
-.container{
+.container {
     animation: transitionIN 0.75s;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 .container {

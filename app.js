@@ -14,8 +14,7 @@ var ClassroomRouter = require('./routes/Classroom');
 var TeacherRouter = require('./routes/Teacher');
 var SubjectRouter = require('./routes/Subject');
 var AboutRouter = require('./routes/About');
-var LoginRouter = require('./routes/Login')
-var RegisterRouter = require('./routes/Register')
+var UserRouter = require('./routes/User')
 
 
 var app = express();
@@ -45,8 +44,7 @@ app.use('/Classrooms', ClassroomRouter);
 app.use('/Teachers', TeacherRouter);
 app.use('/Subjects', SubjectRouter);
 app.use('/About', AboutRouter);
-app.use('/Login', LoginRouter);
-app.use('/Register', RegisterRouter);
+app.use('/User', UserRouter);
 
 
 app.use(function (req, res, next) {
