@@ -16,6 +16,12 @@ main {
   font-family: 'Roboto', helvetica, arial, sans-serif;
   font-size: 1.5em;
 }
+.TopUser {
+  color: white;
+  font-size: medium;
+  text-align: center;
+  margin-top: 10%;
+}
 
 main:before {
   content: '';
