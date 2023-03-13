@@ -53,6 +53,7 @@ router.post('/register', (req, res, next) => {
     let confirmpassword = req.body.confirmpassword
     let errors = false;
 
+
     if (password != confirmpassword){
         errors = true;
         req.flash('error', 'รหัสผ่านไม่ตรงกัน');
